@@ -1,0 +1,8 @@
+body {
+    font-family: monospace;
+    background-color: rgb(20, 5, 15);
+    color: rgb(174, 226, 215);
+    flex-wrap: wrap;
+    min-width: 420px;
+    text-align: center;
+}

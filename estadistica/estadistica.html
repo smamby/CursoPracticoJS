@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estadistica.css">
+    <title>Estadistica</title>
+</head>
+<body>
+    <h2>Estadistica de datos</h2>
+    <label for="inputArray">Inserta tu lista de datos</label><br>
+    <textarea id="inputArray" placeholder="2,66,7,8,544,9,166654..." cols="36" rows="7"></textarea><br><br>    
+    <input type="button" value="media" onclick="media()">
+    <input type="button" value="mediana" onclick="medianaDeUnaLista()">
+    <input type="button" value="moda" onclick="moda()"><br>
+    <input type="button" value="desviacion" onclick="desviacion()">
+    <input type="button" value="desviacionMedia" onclick="desviacionMedia()"><br>
+    <input type="button" value="desviacionStandarPoblacion" onclick="desviacionStandarPoblacion()">
+    <input type="button" value="desviacionStandarMuestra" onclick="desviacionStandarMuestra()"><br>
+    <input type="button" value="rango" onclick="rango()">
+    <input type="button" value="valorPonderado" onclick="promedioPonderado()"><br><br>
+    <br>
+    <div id="cajaResultado">
+        <br>
+        <th id="resultado"></th>
+    </div>
+    <script src="estadistica.js"></script>
+    <script src="interaccion.js"></script>
+</body>
+</html>

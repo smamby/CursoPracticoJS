@@ -1,0 +1,41 @@
+body {
+    font-family: monospace;
+    background-color: rgb(20, 5, 15);
+    color: rgb(174, 226, 215);
+    flex-wrap: wrap;    
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#inputArray {
+    padding: 3px 3px;
+    height: 50px;
+    border: 3px solid rgb(134, 194, 181);
+    margin: 5px;
+    border-radius: 3px;
+    min-width: 270px;
+    max-width: 600px;    
+}
+
+input[type="button"] {
+    font-family: monospace;
+    padding: 3px 3px;
+    height: 29px;
+    border: 3px solid rgb(134, 194, 181);
+    margin: 8px 5px;
+    border-radius: 3px;
+    min-width: 70px;
+    max-width: 290px;
+}
+#cajaResultado {
+    font-family: monospace;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px 5px;
+    min-height: 65px;
+    height: auto;
+    border: 3px solid rgb(134, 194, 181);
+        border-radius: 3px;
+    min-width: 70px;
+    max-width: 290px;
+}

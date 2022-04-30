@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometria</title>
+</head>
+<body style="background-color: rgb(8, 10, 30); color: greenyellow; font-family: monospace;">
+    <header>
+        <h1>Calculando geometrias</h1>
+    </header>
+    <section>
+        <form action="">
+            <label for="ladoAR">
+                geometria del rectangulo
+            </label><br>
+            <input id="ladoAR" placeholder="lado A" type="number"><br>
+            <input id="ladoBR" placeholder="lado B" type="number"><br>
+            <input type="button" onclick="javascript:perimetroRectangulo();" value="perimetro de rectangulo">
+            <input type="button" onclick="javascript:areaRectangulo();" value="area de rectangulo">
+            <div id="impResFuncRec"></div>
+        </form>
+    </section><br><br>
+    <section>
+        <form action="">
+            <label for="ladoAT">
+                geometria del trianangulo
+            </label><br>
+            <input id="ladoAT" placeholder="lado A" type="number"><br>
+            <input id="ladoBT" placeholder="lado B" type="number"><br>
+            <input id="baseT" placeholder="base" type="number"><br>
+            <input type="button" onclick="javascript:perimetroTriangulo();" value="perimetro de triangulo">
+            <input type="button" onclick="javascript:areaTriangulo();" value="area de triangulo">
+            <div id="impResFuncTriang"></div>
+        </form>
+    </section><br><br>
+    <section>
+        <form action="">
+            <label for="radio">
+                geometria del circulo
+            </label><br>
+            <input id="radio" placeholder="radio" type="number"><br>
+            <input type="button" onclick="javascript:perimetroCirculo();" value="perimetro del circulo">
+            <input type="button" onclick="javascript:areaCirculo();" value="area del circulo">
+            <div id="impResFuncCirculo"></div>
+        </form>
+    </section>
+    <script src="./geometria.js"></script>
+</body>
+</html>
