@@ -27,6 +27,10 @@ input[type="button"] {
     min-width: 70px;
     max-width: 290px;
 }
+input[type="button"]:hover{
+    color: rgb(134, 194, 181);
+    background-color: rgb(20, 5, 15);
+}
 #cajaResultado {
     font-family: monospace;
     margin-left: auto;
@@ -38,4 +42,7 @@ input[type="button"] {
         border-radius: 3px;
     min-width: 70px;
     max-width: 290px;
+}
+#canvas{
+    background-color: rgb(134, 194, 181);
 }

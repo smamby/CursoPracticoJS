@@ -1,31 +1,81 @@
 //PROMEDIO o  media aritmetica
 const lista1 = [100, 200, 300, 500];
+const lista2 = [ 100,30,6,1301,1303,140,1000000,6,100,1303,1303];
+const lista4 = [1,2,5,1,4,8,4,9,8,3,3,5,4,6,6,
+    8,7,4,5,1,2,4,5,3,3,3,3,3,3,2,1,0,4,1,9,4,0];
+const lista3 = [200,30,4,987,57,776,554,10247,888,903];
+const lista5 = [200,230,224,287,257,276,254,247,288,293];
+const lista6 = [200,224,287,276,293];
 
-let sumaLista1 = 0;
-for (let i = 0; i < lista1.length; i++){
-    sumaLista1 = sumaLista1 + lista1[i];
+
+//ARRANQUE
+function arrancar(){ 
+    console.log("running");
+    inputArray = document.getElementById("inputArray").value;
+    console.log(inputArray);
+    return inputArray;    
 };
+inputArray = document.getElementById("inputArray");
+document.addEventListener("keydown", arrancar);
+const arr = arrancar();    
+var dataInput = JSON.parse("["+arr+"]");
+var inputArray = JSON.parse("["+arr+"]");
+var imprimirResultado = document.getElementById("cajaResultado");
+const getCanvas = document.getElementById("canvas");
+const canvasCTX = getCanvas.getContext('2d');
 
-const promedioLista1 = sumaLista1 / lista1.length;
+//DATOS STANDAR DEL DATA INPUT
+var cantidadDeElementos;
+cantidadDeElementos = inputArray.length
+var q1 = (1 * inputArray.length) / 4
+var q2 = (2 * inputArray.length) / 4
+var q3 = (3 * inputArray.length) / 4 
+var q4 = (4 * inputArray.length) / 4 
+var freq = {};
+var lisOrdFreqFAcum = [];
 
-function calcularMediaAritmetica(lista) {
-    // let sumaLista = 0;
-    // for (let i = 0; i < lista.length; i++){ forma A: con un contador
-    // sumaLista = sumaLista + lista[i];
-    // };
-    const sumaLista = lista.reduce((a,b) => a+b); // forma C: reduci compacta
-        // function (valorAcumulado=0,nuevoElemento) {
-        //     return valorAcumulado + nuevoElemento;  //forma B: con reduce
-        // }    //);
-    const promedioLista = sumaLista / lista.length;
-    return promedioLista;
+const frequency = () => {
+    const arr = arrancar();    
+    var dataInput = JSON.parse("["+arr+"]");
+    const count = {};
+    dataInput.map(function(el){
+        if(count[el]){
+            count[el] += 1;
+        } else {
+            count[el] = 1;
+        };
+    });
+    //console.log(count);
+    lisOrdFreq = Object.entries(count);
+    lisOrdFreqFAcum = lisOrdFreq;
+    return lisOrdFreq;
+};
+function lisFreqAcum(){ 
+    frequency();
+    var freq = frequency().map(function(el){
+    return el[1];
+    });
+    c = 0
+    freqAcum = [];
+    for(let e of freq){
+        c += e;
+        freqAcum.push(c);
+    };
+    console.log(freqAcum);
+    console.log(freqAcum.length);    
+    for (var i=0; i < freqAcum.length; i++){
+        lisOrdFreqFAcum[i].push(freqAcum[i]);   
+        lisOrdFreqFAcum[i][0] = parseInt(lisOrdFreqFAcum[i][0])     
+    };
+    return lisOrdFreqFAcum;
 }
+var lista7 = [1,13,11,12,32,12,32,11,34,13,17,23,12,22,12,22,13,23,5,
+17,11,13,13,4,17,4,32,12,17,23,22,11,12,11,13,11,17,22,37,39]
+
+
 
 //MEDIANA
-const lista2 = [ 100,30,6,1301,1303,140,1000000,6,100,1303,1303];
-
 //const mitadLista2 = parseInt(lista2.length / 2);
-
 function esPar (numero) {
     if (numero%2 === 0) {
         return true;
@@ -33,7 +83,6 @@ function esPar (numero) {
         return false;
     };
 };
-
 
 //medianaDeUnaLista(lista2)
 //ejercicioadicional sort
@@ -70,18 +119,6 @@ function ordenar(lista){
 }       // join convierte array en una cadena de texto que imprimir
 
 
-const lista4 = [1,2,5,1,4,8,4,9,8,3,3,5,4,6,6,
-                8,7,4,5,1,2,4,5,3,3,3,3,3,3,2,1,0,4,1,9,4,0];
-//ARRANQUE
-function arrancar(){    
-    var inputArray = document.getElementById("inputArray").value;
-    return inputArray;    
-};
-
-const lista3 = [200,30,4,987,57,776,554,10247,888,903];
-const lista5 = [200,230,224,287,257,276,254,247,288,293];
-const lista6 = [200,224,287,276,293];
-var imprimirResultado = document.getElementById("cajaResultado");
 
 //MEDIA
 function media() {  

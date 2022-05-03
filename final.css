@@ -37,7 +37,14 @@ li {
     padding : 6px;
     font-weight: 600;
 }
+li a:hover  {
+    color: blue;
+    font-size: larger;
+    box-shadow: -2px 2px rgb(68, 41, 75);
+}
+/*li~li~li a{
+    color: blue;
+}*/
 a {
-    color: rgb(75, 14, 110);
     text-decoration: none;       
 }
