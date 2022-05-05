@@ -25,14 +25,15 @@ const getCanvas = document.getElementById("canvas");
 const canvasCTX = getCanvas.getContext('2d');
 
 //DATOS STANDAR DEL DATA INPUT
-var cantidadDeElementos;
-cantidadDeElementos = inputArray.length
-var q1 = (1 * inputArray.length) / 4
-var q2 = (2 * inputArray.length) / 4
-var q3 = (3 * inputArray.length) / 4 
-var q4 = (4 * inputArray.length) / 4 
+ 
 var freq = {};
 var lisOrdFreqFAcum = [];
+var cantidadDeElementos = lisOrdFreqFAcum.length;
+var q1 = 0;
+var q2 = 0;
+var q3 = 0;
+var q4 = 0;
+var ri = 0;
 
 const frequency = () => {
     const arr = arrancar();    
@@ -61,18 +62,47 @@ function lisFreqAcum(){
         c += e;
         freqAcum.push(c);
     };
-    console.log(freqAcum);
-    console.log(freqAcum.length);    
+    //console.log(freqAcum);
+    //console.log(freqAcum.length);    
     for (var i=0; i < freqAcum.length; i++){
         lisOrdFreqFAcum[i].push(freqAcum[i]);   
         lisOrdFreqFAcum[i][0] = parseInt(lisOrdFreqFAcum[i][0])     
-    };
+    };    
     return lisOrdFreqFAcum;
-}
-var lista7 = [1,13,11,12,32,12,32,11,34,13,17,23,12,22,12,22,13,23,5,
-17,11,13,13,4,17,4,32,12,17,23,22,11,12,11,13,11,17,22,37,39]
+};
+var lista7 = [1,13,11,11,32,13,32,11,34,13,17,23,11,22,13,22,13,23,5,17,
+11,13,13,4,17,4,32,11,17,22,11,13,32,11,13,11,17,22,11,11,17,11,22,37,39]
 
-
+function quartians(){
+    lisFreqAcum();    
+    q1 = Math.ceil((1 * lisOrdFreqFAcum[lisOrdFreqFAcum.length-1][2]) / 4);
+    q2 = Math.ceil((2 * lisOrdFreqFAcum[lisOrdFreqFAcum.length-1][2]) / 4);
+    q3 = Math.ceil((3 * lisOrdFreqFAcum[lisOrdFreqFAcum.length-1][2]) / 4);    
+    // function quart(q){
+    //     var qX = 
+    //     for(i=0;i<lisOrdFreqFAcum.length;i++){
+    //         if(lisOrdFreqFAcum[i][2].includes(q)){
+    //             q = q; 
+    //             console.log(q);
+    //             return q
+    //         } else {
+    //             q = q+1;
+    //             quart(q);
+    //         };
+    //     };
+    // };
+    // quart(q1)
+    ri = q3 - q2;
+    valorAtipicoQ1 = q1 - (1.5*ri);
+    valorAtipicoQ3 = q3 + (1.5*ri);
+    console.log("Freq Acum "+lisOrdFreqFAcum[lisOrdFreqFAcum.length-1][2]);
+    console.log("quartian 1 "+q1);
+    console.log("quartian 2 "+q2);
+    console.log("quartian 3 "+q3);
+    console.log("intercuartiles "+ri);
+    console.log("Valor atipico Q1 "+valorAtipicoQ1);
+    console.log("Valor Atipico Q3 "+valorAtipicoQ3);    
+};
 
 //MEDIANA
 //const mitadLista2 = parseInt(lista2.length / 2);
