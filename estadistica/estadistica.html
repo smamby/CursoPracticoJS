@@ -8,25 +8,40 @@
     <title>Estadistica</title>
 </head>
 <body>
-    <h2>Estadistica de datos</h2>
+    <div class="headerCont">
+        <div class="header">
+            <div class="log"></div>
+            <div class="log"></div>
+            <div class="log"></div>
+            <div class="log"></div>
+            <div class="log"></div>
+        </div>
+        <h2>Estadistica de datos</h2>
+    </div>    
     <label for="inputArray">Inserta tu lista de datos</label><br>
     <textarea id="inputArray" placeholder="2,66,7,8,544,9,166654..." cols="36" rows="7"></textarea><br><br>    
-    <input type="button" value="media" onclick="media()">
-    <input type="button" value="mediana" onclick="medianaDeUnaLista()">
-    <input type="button" value="moda" onclick="moda()"><br>
-    <input type="button" value="desviacion" onclick="desviacion()">
-    <input type="button" value="desviacionMedia" onclick="desviacionMedia()"><br>
-    <input type="button" value="desviacionStandarPoblacion" onclick="desviacionStandarPoblacion()">
-    <input type="button" value="desviacionStandarMuestra" onclick="desviacionStandarMuestra()"><br>
-    <input type="button" value="rango" onclick="rango()">
-    <input type="button" value="valorPonderado" onclick="promedioPonderado()"><br><br>
+    <div class="container">
+        <input type="button" value="media" onclick="media()">
+        <input type="button" value="mediana" onclick="medianaDeUnaLista()">
+        <input type="button" value="moda" onclick="moda()">        
+    </div>
+    <div class="contDes">
+        <input type="button" value="desviacion" onclick="desviacion()">
+        <input type="button" value="desviacionMedia" onclick="desviacionMedia()">
+        <input type="button" value="desv.Std.Poblacion" onclick="desviacionStandarPoblacion()">
+        <input type="button" value="des.Std.Muestra" onclick="desviacionStandarMuestra()">
+        <input type="button" value="rango" onclick="rango()">
+        <input type="button" value="graficar" onclick="graficarQuartiles()">
+    </div>
     <br>
     <div id="cajaResultado">
         <br>
         <th id="resultado"></th>
     </div><br>
-    <div>
-        <canvas id="canvas" width="400" height="200"></canvas>
+    <div id="dibujo">
+        <div id="contCanvas">
+            <canvas id="canvas" width="400" height="200"></canvas>
+        </div>
     </div>
     <script src="estadistica.js"></script>    
 </body>
