@@ -1,22 +1,23 @@
 //PROMEDIO o  media aritmetica
-const lista1 = [100, 200, 300, 500];
+const lista1 = [200,230,224,287,257,276,254,247,288,293,264,275,283,266,284,259,
+    277,278,277,256,267,269,288,265,276];
 const lista2 = [ 100,30,6,1301,1303,140,1000000,6,100,1303,1303];
 const lista4 = [1,2,5,1,4,8,4,9,8,3,3,5,4,6,6,
     8,7,4,5,1,2,4,5,3,3,3,3,3,3,2,1,0,4,1,9,4,0];
 //const lista3 = [200,30,4,987,57,776,554,10247,888,903];
 const lista5 = [200,230,224,287,257,276,254,247,288,293];
-const lista6 = [200,224,287,276,293];
+const lista6 = [200,230,224,287,257,276,254,247,288,293,264,275,283,266,284,259];
 var getCanvas = document.getElementById("canvas");
 var lienzo = getCanvas.getContext('2d');
 
 //GRAFICAR EN CANVAS
 function dibujarBase(){
-    lienzo.strokeStyle="rgb(49, 31, 75)";
-    lienzo.stroke()
+    lienzo.strokeStyle="rgb(49, 31, 75)";    
     lienzo.lineWidth=1;
     lienzo.beginPath();
-    lienzo.moveTo(0,130);
-    lienzo.lineTo(400,130);
+    lienzo.moveTo(0,130.5);
+    lienzo.lineTo(400,130.5);
+    lienzo.stroke();
 };
 
 var inputArray //= document.getElementById("inputArray");
@@ -95,10 +96,11 @@ function lisFreqAcum(){
     };    
     return lisOrdFreqFAcum;
 };
-var lista7 = [13,11,11,32,13,32,11,34,13,17,23,11,22,13,22,13,23,5,17,11
-,13,13,4,17,4,32,11,17,22,11,13,32,11,13,11,17,22,11,11,17,11,22,37,39]
-var lista3 = [200,30,4,987,57,776,554,1247,888,903];
-var lista8 = [200,30,4,97,57,776,554,1247,88,93,56,124,135,224,155]
+var lista7 = [13,14,14,32,13,32,14,34,13,17,23,15,22,13,22,13,23,5,17,11
+,13,13,4,17,4,32,11,17,22,11,13,32,11,13,11,17,22,11,11,17,11,22,37,39,
+37,32,34,45,27,26,32,34,32,31,29,35,39]
+var lista3 = [200,350,421,987,57,776,554,1247,888,903];
+var lista8 = [200,30,4,97,57,76,554,147,88,93,56,124,135,224,155]
 
 var qX;
 var qFx; 
@@ -139,14 +141,14 @@ function quartians(){
 
 //GRAFICAR QUARTILES
 function impBase(){
-    lienzo.strokeStyle="rgb(200, 31, 75)";
-    lienzo.stroke()
+    lienzo.strokeStyle="red";
     lienzo.lineWidth=1;
     lienzo.beginPath();
-    lienzo.moveTo(5,135);
-    lienzo.lineTo(5,125);      
-    lienzo.moveTo(395,135);
-    lienzo.lineTo(395,125);
+    lienzo.moveTo(5.5,135);
+    lienzo.lineTo(5.5,125);      
+    lienzo.moveTo(395.5,135);
+    lienzo.lineTo(395.5,125);
+    lienzo.stroke();
 };    
 var rangoMin;
 var rangoMax;
@@ -157,63 +159,142 @@ function impQ(){
     rangoMin = rango()[0].min;
     rangoMax = rango()[0].max;
     space = parseFloat(390/(rangoMax - rangoMin));
-    lienzo.strokeStyle="rgb(200, 31, 75)";
-    lienzo.stroke()
+    lienzo.strokeStyle="rgb(200, 31, 75)";    
     lienzo.lineWidth=2;
     lienzo.beginPath();
     let q1Draw = parseInt((qF1 - rangoMin) * space);
-    lienzo.moveTo(5+q1Draw,125);
-    lienzo.lineTo(5+q1Draw,135);
+    lienzo.moveTo(5.5+q1Draw,125);
+    lienzo.lineTo(5.5+q1Draw,135);
     let q2Draw = parseInt((qF2 - rangoMin) * space);
-    lienzo.moveTo(5+q2Draw,125);
-    lienzo.lineTo(5+q2Draw,135);
+    lienzo.moveTo(5.5+q2Draw,125);
+    lienzo.lineTo(5.5+q2Draw,135);
     let q3Draw = parseInt((qF3 - rangoMin) * space);
-    lienzo.moveTo(5+q3Draw,125);
-    lienzo.lineTo(5+q3Draw,135);
+    lienzo.moveTo(5.5+q3Draw,125);
+    lienzo.lineTo(5.5+q3Draw,135);  
+    lienzo.stroke()  
 };    
 var desMedDraw;
 var dMDraw;
 var mediaDraw;
 function impValoresMedios(){
     media()
-    desviacionMedia()
-    
+    desviacionMedia()    
     mediaDraw = media();
     let medDraw =  parseInt((mediaDraw - rangoMin) * space);
-    lienzo.strokeStyle="rgb(255, 0, 0)";
-    lienzo.stroke()
-    lienzo.lineWidth=2;
-    lienzo.beginPath();
-    lienzo.moveTo(5+medDraw,110);
-    lienzo.lineTo(5+medDraw,145);
     desMedDraw = desviacionMedia();
     dMDraw = parseInt(desMedDraw * space);
     console.log(dMDraw);
     console.log(medDraw-dMDraw);
     console.log(medDraw);
     console.log(medDraw+dMDraw);
-    lienzo.moveTo(5+medDraw+dMDraw,120);
-    lienzo.lineTo(5+medDraw+dMDraw,140);
-    lienzo.moveTo(5+medDraw-dMDraw,120);
-    lienzo.lineTo(5+medDraw-dMDraw,140);
+    //imp desviacion media
+    lienzo.moveTo(5.5+medDraw+dMDraw,120);
+    lienzo.lineTo(5.5+medDraw+dMDraw,140);
+    lienzo.moveTo(5.5+medDraw-dMDraw,120);
+    lienzo.lineTo(5.5+medDraw-dMDraw,140); 
+    lienzo.stroke();
+    lienzo.strokeStyle="yellow";
+    lienzo.fillStyle= "rgba(250,250,0,0.2";
+    lienzo.fillRect((5.5+medDraw-dMDraw),50, (dMDraw*2), 80);
+    lienzo.strokeRect((5.5+medDraw-dMDraw),50,(dMDraw*2),80);
+    lienzo.fillStyle="black";
+    lienzo.fillText("Desv. Med.", 5.5+medDraw, 44.5)
+    //imp mediana
+    
 };
-function graficarQuartiles(){ 
-    lienzo.clearRect(0,0,400,200);      
-    impBase();
-    impQ();
-    impValoresMedios();
-    impValoresGraf();
-} 
+function impMedia(){
+    mediaDraw = media();
+    let medDraw =  parseInt((mediaDraw - rangoMin) * space);
+    lienzo.strokeStyle="red";    
+    lienzo.lineWidth=2;
+    lienzo.beginPath();
+    lienzo.moveTo(5.5+medDraw,100);
+    lienzo.lineTo(5.5+medDraw,155);
+    lienzo.stroke();
+};
+function impConcentraciones() {
+    rangoMin = rango()[0].min;
+    var con1Draw;
+    var con2Draw;
+    if ((qF2-qF1) < (qF3-qF2)) {        
+        con1Draw = parseInt((qF1 - rangoMin) * space);
+        con2Draw = parseInt((qF2 - rangoMin) * space);        
+    } else {
+        con1Draw = parseInt((qF2 - rangoMin) * space);
+        con2Draw = parseInt((qF3 - rangoMin) * space);
+    };
+    lienzo.strokeStyle="green";
+    lienzo.lineWidth=2;
+    lienzo.fillStyle="rgba(0,230,60,0.5)";
+    lienzo.beginPath();
+    lienzo.moveTo(5.5+con1Draw,130.5);
+    lienzo.lineTo(5.5+con1Draw,70.5);
+    lienzo.lineTo(5.5+con2Draw,70.5);
+    lienzo.lineTo(5.5+con2Draw, 130.5);
+    lienzo.closePath();
+    lienzo.stroke();
+    lienzo.fill();
+    lienzo.fillStyle="black";
+    lienzo.textAlign="center"
+    lienzo.fillText("Concent.",((con1Draw+con2Draw)/2+5.5), 64.5);    
+};
+function impText(){
+    let med = media().toFixed(2);
+    rangoMin = rango()[0].min
+    let min = minimo.toString();
+    let max = maximo.toString();
+    let q1T = qF1.toString();
+    let q2T = qF2.toString();
+    let q3T = qF3.toString();
+    let medT = med.toString();
+    let q1 = parseInt((qF1 - rangoMin) * space);
+    let q2 = parseInt((qF2 - rangoMin) * space);
+    let q3 = parseInt ((qF3 - rangoMin) * space);
+    let medDraw = parseInt((med - rangoMin) * space);
+    lienzo.fillStyle="black";
+    lienzo.font = "12px arial";
+    lienzo.textBaselien = "middle";
+    lienzo.textAlign = "start";
+    lienzo.fillText("Rm", 2.5, 145);
+    lienzo.fillText(min, 2.5, 157);
+    lienzo.textAlign = "center";
+    lienzo.fillText(q1T, 5.5+q1, 157);
+    lienzo.fillText(q2T, 5.5+q2, 157);
+    lienzo.fillText(q3T, 5.5+q3, 157);
+    lienzo.fillText("Q1", 5.5+q1, 145);
+    lienzo.fillText("Q2", 5.5+q2, 145);
+    lienzo.fillText("Q3", 5.5+q3, 145);
+    lienzo.fillText("media", 5.5+medDraw, 167);
+    lienzo.fillText(medT, 5.5+medDraw, 180);    
+    lienzo.textAlign = "end";
+    lienzo.fillText("RM", 5.5+395, 145);
+    lienzo.fillText(max, 5.5+395, 157);    
+};
 function impValoresGraf() {
     imprimirResultado.innerHTML = "Los valores atipicos son "
                         +valorAtipicoQ1+" y "+valorAtipicoQ3
                         +". El rango min: "+minimo+", max: "+maximo
                         +". Los cuartiles son: "+qF1+", "+qF2+", "+qF3
-                        +". La media es "+media()
-                        +". la desviacion media es "+desviacionMedia()
-                        +" dando L.inf="+(mediaDraw-desMedDraw)
-                        +" y L.sup.="+(mediaDraw+desMedDraw);
-}
+                        +". La media es "+media().toFixed(2)
+                        +". la desviacion media es "+desviacionMedia().toFixed(2)
+                        +" dando L.inf="+(mediaDraw-desMedDraw).toFixed(2)
+                        +" y L.sup.="+(mediaDraw+desMedDraw).toFixed(2);
+};
+function graficarQuartiles(){ 
+    lienzo.clearRect(0,0,400,200);      
+    // impBase();
+    impQ();
+    //impConcentraciones();
+    impBase();
+    impValoresMedios();
+    impConcentraciones();
+    impQ(); //tb lo calcula, lo imprimo 2 veces para que se imprima encima del fill    
+    impText();
+    impMedia();
+    impValoresGraf();    
+};
+
+
 
 //MEDIANA
 //const mitadLista2 = parseInt(lista2.length / 2);
