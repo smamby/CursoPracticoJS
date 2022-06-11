@@ -1,0 +1,41 @@
+body{
+background-color: rgb(8, 10, 30); 
+color: aqua; 
+font-family: monospace;
+}
+.header {
+    background-color: aqua;
+    color: rgb(8, 10, 30);
+    /*height: 60px;*/
+    margin: 0px 0px 15px 0px;
+    padding: 25px;
+}
+
+form input[type="number"] {
+    padding: 5px;
+    margin: 5px;
+    min-height: 22px;
+    background-color: aqua;
+    min-width: auto;
+    max-width: 60px;    
+}
+form input[type="button"]{
+    padding: 5px;
+    margin: 5px;
+    min-height: 22px;
+    background-color: aqua;
+    
+    min-width: auto;
+    max-width: auto;
+}
+label{
+    margin: 5px;
+}
+form > div {
+    background-color: aquamarine;
+    min-height: 22px;
+    max-height: auto;
+    width: auto;
+    color: blueviolet;
+    font-weight: bold;
+}
